@@ -21,13 +21,15 @@ class MoviesTable extends Component {
           onClick={() => this.props.onDelete(movie)}
           className="btn btn-danger btn-sm"
         >
-          klik Remove
+          Delete
         </button>
       )
     }
   ];
+
   render() {
-    const { movies, sortColumn, onSort } = this.props;
+    const { movies, onSort, sortColumn } = this.props;
+
     return (
       <Table
         columns={this.columns}
@@ -38,4 +40,5 @@ class MoviesTable extends Component {
     );
   }
 }
+
 export default MoviesTable;
