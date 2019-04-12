@@ -42,9 +42,10 @@ class Form extends Component {
 
     const data = { ...this.state.data };
     data[input.name] = input.value;
+
+    this.setState({ data, errors });
   };
   renderButton(label) {
-    // this.setState({ data, errors });
     return (
       <button disabled={this.validate()} className="btn btn-primary">
         {label}
@@ -53,7 +54,6 @@ class Form extends Component {
   }
   renderSelect(name, label, options) {
     const { data, errors } = this.state;
-
     return (
       <Select
         name={name}
